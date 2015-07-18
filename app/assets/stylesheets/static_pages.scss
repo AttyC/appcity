@@ -2,21 +2,30 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+$bg-color: #fff;
+$h1-color: rgb(253, 253, 63);
+
 body {
-    background-color: #FFFF99;
-    color: #000099;
-    font-family: 'Helvetica', san-serif;
-    margin:0 20px;
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $bg-color;
+  margin:0 3em;
 }
+
 h1 {
-    font-size: 2em;
-    color: #660033;
+    color: $h1-color;
     text-align: center;
+    background-color: #435267;
+    padding: 1em 0;
 }
 h2 {
-    font-size: 1.2em;
+  text-align: center;
+}
+h3 {
+  color: #660033;
 }
 img {
-    width: 300px;
-    
+  width: 300px;
 }

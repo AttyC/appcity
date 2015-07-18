@@ -1,0 +1,22 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#products {
+  width: 70%;
+  border: 1px solid grey;
+  margin: 2em auto;
+}
+#products th {
+  text-align: center;
+  padding: 1em;
+}
+#new_product {
+  input, textarea {
+  width: 300px;
+  padding: 0.5em;
+  }
+  .actions input {
+      border: 1px solid #fff;
+      border-radius: 4px;
+  }
+}
