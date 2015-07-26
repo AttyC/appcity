@@ -6,6 +6,7 @@ $font-stack:    Helvetica, sans-serif;
 $primary-color: #333;
 $bg-color: #fff;
 $h1-color: rgb(253, 253, 63);
+$h3-color: #22C079;
 
 body {
   font: 100% $font-stack;
@@ -28,4 +29,7 @@ h3 {
 }
 img {
   width: 300px;
+}
+.carousel-caption {
+  color: $h3-color;
 }
