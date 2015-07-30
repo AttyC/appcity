@@ -6,38 +6,50 @@ $font-stack: Helvetica, sans-serif;
 $primary-color: #333;
 $body-color: #fff;
 $h1-color: rgb(253, 253, 63);
-$h3-color: #22C079;
+$h2-color: #9EDFE2;
+$h3-color: #9BD8B9;
 $dark_bg: #435267;
+$padding: 0.5em;
 
 body {
   font: 1.2em $font-stack;
   color: $primary-color;
-  background-color: $body-color;
+  background-color: $dark_bg;
   margin:0 3em;
 }
-
 h1 {
     color: $h1-color;
     text-align: center;
-    background-color: $dark_bg;
-    padding: 1em 0;
+    padding: 0.7em 0 0 0;
 }
 h2 {
   text-align: center;
+  color: $h1-color;
+  font-size: 1.7em;
 }
-h3 {
-  color: #660033;
+h3, h4 {
+  color: $h3-color;
 }
 img {
   width: 300px;
 }
 .carousel-caption {
-  color: $h3-color;
+  color: $h2-color;
 }
 .navbar {
   background: $dark_bg;
-  opacity: 0.75;
   a {
     color: $h1-color;
   }
+}
+.search {
+  padding: 10px 0;
+  width: 20%;
+  input {
+    padding: $padding;
+  }
+}
+label {
+  color: $h2-color;
+  font-weight: normal;
 }

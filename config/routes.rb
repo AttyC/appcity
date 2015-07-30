@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
     
-  get '/products', to: 'products#new' #redirected products url to orders, for fun!
+  #get '/products', to: 'products#new' #redirected products url to orders, for fun!
   
   resources :products # created with scaffolding - shows all default CRUD routes
 
