@@ -1,9 +1,11 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$border: 1px solid #ccc;
+
 #products {
   width: 70%;
-  border: 1px solid grey;
+  border: $border;
   margin: 2em auto;
   font-size: 12px;
 }
@@ -17,7 +19,7 @@
   padding: 0.5em;
   }
   .actions input {
-    border: 1px solid #fff;
+    border: $border;
     border-radius: 4px;
   }
 }

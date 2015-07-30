@@ -1,0 +1,9 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-6 col-md-offset-3"><h3>Featured Product</h3>
+          <h4><%= @featured_product.name %></h4>
+          <p><%= @featured_product.description %></p>
+          <%= image_tag @featured_product.image_url, alt: @featured_product.description %>
+      </div>
+  </div>
+</div>

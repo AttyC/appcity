@@ -2,23 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$font-stack:    Helvetica, sans-serif;
+$font-stack: Helvetica, sans-serif;
 $primary-color: #333;
-$bg-color: #fff;
+$body-color: #fff;
 $h1-color: rgb(253, 253, 63);
 $h3-color: #22C079;
+$dark_bg: #435267;
 
 body {
-  font: 100% $font-stack;
+  font: 1.2em $font-stack;
   color: $primary-color;
-  background-color: $bg-color;
+  background-color: $body-color;
   margin:0 3em;
 }
 
 h1 {
     color: $h1-color;
     text-align: center;
-    background-color: #435267;
+    background-color: $dark_bg;
     padding: 1em 0;
 }
 h2 {
@@ -32,4 +33,11 @@ img {
 }
 .carousel-caption {
   color: $h3-color;
+}
+.navbar {
+  background: $dark_bg;
+  opacity: 0.75;
+  a {
+    color: $h1-color;
+  }
 }
