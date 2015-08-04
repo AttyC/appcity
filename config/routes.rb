@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
+  
+  controller :static_pages do
+    get :home
+    get :about
+    get :contact
+  end
+  
+  post 'static_pages/thank_you'
     
   #get '/products', to: 'products#new' #redirected products url to orders, for fun!
   
   resources :products # created with scaffolding - shows all default CRUD routes
-
-  get 'static_pages/about'
-
-  get 'static_pages/contact'
-
-  get 'static_pages/index'
-  
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -23,7 +24,8 @@ Rails.application.routes.draw do
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-resources :orders, only: [:index, :show, :new, :create]
+  resources :orders, only: [:index, :show, :new, :create]
+
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
