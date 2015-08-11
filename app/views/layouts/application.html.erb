@@ -17,7 +17,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-
+          <% if user_signed_in? %>
+            <li>
+              <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to('Login', new_user_session_path ) %>
+            </li>
+          <% end %>
         </div>
           <%= form_tag("/products", method: "get", :class => 'search pull-right') do %>
           <%= label_tag(:q, "Search for:") %>
@@ -34,6 +42,9 @@
         </div><!--end navbar collapse -->
       </div><!--end navbar container-->
     </nav>
+    
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   <h1>Tots' Music Shop</h1>
   <h2>Buy musical instruments and props</h2>
   <div class="container-fluid">
