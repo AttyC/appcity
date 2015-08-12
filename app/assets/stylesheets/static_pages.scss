@@ -5,26 +5,25 @@
 $font-stack: Helvetica, sans-serif;
 $primary-color: #ddd;
 $body-color: #fff;
-$h1-color: rgb(253, 253, 63);
+$header-color: #fdfd3f; /* bright yellow */
 $h2-color: #9EDFE2;
-$h3-color: #9BD8B9;
-$dark_bg: #435267;
+$h3-color: #9BD8B9; 
+$dark_bg: #435267; /* dusky blue */
 $padding: 0.5em;
 
 body {
   font: 1.2em $font-stack;
-  color: $primary-color;
-  background-color: $dark_bg;
+  background: $body-color;
   margin:0 3em;
 }
 h1 {
-    color: $h1-color;
+    color: $dark_bg;
     text-align: center;
     padding: 0.7em 0 0 0;
 }
 h2 {
   text-align: center;
-  color: $h1-color;
+  color: $dark_bg;
   font-size: 1.7em;
 }
 h3, h4 {
@@ -39,7 +38,7 @@ img {
 .navbar {
   background: $dark_bg;
   a {
-    color: $h1-color;
+    color: $h2-color;
   }
 }
 .search {
