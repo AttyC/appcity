@@ -10,7 +10,10 @@ Rails.application.routes.draw do
     
   #get '/products', to: 'products#new' #redirected products url to orders, for fun!
   
-  resources :products # created with scaffolding - shows all default CRUD routes
+  resources :products do 
+    resources :comments
+  end
+    # created with scaffolding - shows all default CRUD routes
 
 
   # The priority is based upon order of creation: first created -> highest priority.
