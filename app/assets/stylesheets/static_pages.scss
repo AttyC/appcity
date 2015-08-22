@@ -19,7 +19,7 @@ body {
 h1 {
     color: $dark_bg;
     text-align: center;
-    padding: 0.7em 0 0 0;
+    padding: 1.7em 0 0 0;
 }
 h2 {
   text-align: center;
@@ -29,9 +29,10 @@ h2 {
 h3, h4 {
   color: $h3-color;
 }
-img {
-  width: 300px;
+img.product {
+  width: 200px;
 }
+
 .carousel-caption {
   color: $h2-color;
 }
@@ -42,7 +43,7 @@ img {
   }
 }
 .search {
-  padding: 10px 0;
+  padding: 5px 0;
   width: 20%;
   input {
     padding: $padding;
@@ -51,4 +52,8 @@ img {
 label {
   color: $h2-color;
   font-weight: normal;
+}
+p.alert, p.notice {
+  padding: 0;
+  margin:0;
 }
