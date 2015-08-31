@@ -8,11 +8,10 @@
       <p><%= "Rating: #{comment.rating}/5" %></p>
       <p><%= comment.body %></p>
       
-      <div class="rated" data-score="<%= comment.rating %>">
-        
-      </div>
+      <div class="rated" data-score="<%= comment.rating %>"></div>
       
     </div>
+
   <% end %>
-  
+      <%= will_paginate @comments %>
 </div>
