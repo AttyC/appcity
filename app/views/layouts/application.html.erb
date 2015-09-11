@@ -4,6 +4,7 @@
   <title>Workspace</title>
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <script>Stripe.setPublishableKey("<%= Rails.configuration.stripe[:publishable_key] %>");</script>
 
   <%= csrf_meta_tags %>
 </head>
@@ -54,7 +55,6 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-  <script>Stripe.setPublishableKey("<%= Rails.configuration.stripe[:publishable_key] %>");</script>
-
+ 
 </body>
 </html>
