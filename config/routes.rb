@@ -9,23 +9,21 @@ Rails.application.routes.draw do
   end
   
   post 'static_pages/thank_you'
-  #get 'thank_you' => 'static_pages#thank_you'
+  post 'payments/create' => 'orders#show'
+
   get 'landing_page' => 'static_pages#landing_page'
   get 'featured_page' => 'static_pages#featured_page'
   get 'contact' => 'static_pages#contact'
   get 'about' => 'static_pages#about'
   
-  get 'users/index' => 'users#index'
-  get 'users/show' => 'users#show[:id]'
-  
-  
-  
-    
+  #get 'users/index' => 'users#index'
+  #get 'users/show' => 'users#show[:id]'
   #get '/products', to: 'products#new' #redirected products url to orders, for fun!
   
   resources :products do 
     resources :comments
   end
+  resources :payments, only: [:index, :show, :new, :create]
     # created with scaffolding - shows all default CRUD routes
 
 
