@@ -5,12 +5,14 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+
     if params[:q]
       search_term = params[:q]
       @products = Product.where("name LIKE ?", "%#{search_term}%")
     else
       @products = Product.all.paginate(page: params[:page], per_page: 5)
     end
+            byebug 
   end
 
   # GET /products/1
