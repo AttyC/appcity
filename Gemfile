@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 gem 'devise'
+gem "recaptcha", :require => "recaptcha/rails"
 gem 'cancancan'
 gem 'will_paginate', '~> 3.0.5'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'

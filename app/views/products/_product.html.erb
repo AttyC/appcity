@@ -1,7 +1,7 @@
       <tr>
         <td><%= product.name %></td>
         <td><%= product.description %></td>
-        <td><%= product.image_url %></td>
+        <td><%= image_tag product.image_url, alt: product.description, class: "product", style: "width:100px;"%></td>
         <td><%= product.colour %></td>
         <td><%= number_with_precision(product.price, precision: 2) %></td>
         <td><%= link_to 'Show', product %></td>
