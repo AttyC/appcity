@@ -28,14 +28,17 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
-      if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
+      if verify_recaptcha(model: @user, message: "Oh! It's an error with reCAPTCHA! Are you a human?") && @user.save
+        @user.send_account_activation
+        format.html { redirect_to_with_notice root_path, t('notices.registration.success'), :success }
+        format.json { render action: 'show', status: :created, location: @user }
       else
-        format.html { render :new }
+        format.html { redirect_to_with_notice root_path, t('notices.registration.failed', :error) }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
+    
   end
 
   # PATCH/PUT /users/1
