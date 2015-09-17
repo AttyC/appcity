@@ -22,10 +22,10 @@
   </div>
 
   <div class="actions">
+    <%= recaptcha_tags :public_key => ENV['RECAPTCHA_PUBLIC_KEY'] %>
     <%= f.submit "Sign up" %>
 
   </div>
-    <%= recaptcha_tags %>
 <% end %>
 
 <%= render "devise/shared/links" %>
