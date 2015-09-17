@@ -28,8 +28,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
-      
-      if verify_recaptcha(model: @user, message: "Oh! It's an error with reCAPTCHA! Are you a human?") && @user.save
+      if ( verify_recaptcha :private_key => ENV['RECAPTCHA_PRIVATE_KEY'], model: @user, message: "Oh! It's an error with reCAPTCHA! Are you a human?") && @user.save
+    
+      #if verify_recaptcha(model: @user, message: "Oh! It's an error with reCAPTCHA! Are you a human?") && @user.save
         @user.send_account_activation
         format.html { redirect_to_with_notice root_path, t('notices.registration.success'), :success }
         format.json { render action: 'show', status: :created, location: @user }
