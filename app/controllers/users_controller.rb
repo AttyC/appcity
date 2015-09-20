@@ -13,35 +13,8 @@ class UsersController < ApplicationController
   def show
   end
 
-  # GET /users/new
-  def new
-    @user = User.new
-  end
-
   # GET /users/1/edit
   def edit
-  end
-
-  # POST /users
-  # POST /users.json
-  def create
-    @user = User.new(user_params)
-
-    respond_to do |format|
-      if verify_recaptcha :private_key => ENV['RECAPTCHA_PRIVATE_KEY']
-        @user.save
-    
-      # if verify_recaptcha(model: @user, message: "Oh! It's an error with reCAPTCHA! Are you a human?") && @user.save
-        @user.send_account_activation
-        format.html { redirect_to_with_notice root_path, t('notices.registration.success'), :success }
-        format.json { render action: 'show', status: :created, location: @user }
-      else
-        format.html { redirect_to_with_notice root_path, t('notices.registration.failed', :error) }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
-
-    
   end
 
   # PATCH/PUT /users/1
