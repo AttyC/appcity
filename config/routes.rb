@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get 'featured_page' => 'static_pages#featured_page'
   get 'contact' => 'static_pages#contact'
   get 'about' => 'static_pages#about'
+  get 'gallery' => 'static_pages#gallery'
   
   #get 'users/index' => 'users#index'
   #get 'users/show' => 'users#show[:id]'
