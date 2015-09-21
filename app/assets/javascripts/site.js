@@ -7,5 +7,8 @@ $(document).on('ready page:load', function(){
       }
     });
 
+  $('.banner').unslider();
+
+  $(".fancy_title").lettering();
 
 });
