@@ -28,9 +28,8 @@
       </p>
     </div>
     
-    <%= form_for(@product, remote: true) do %>
+    <%= form_tag "/payments/create" do %>
       <% render partial: "shared/stripe_checkout_button" %>
-
     <% end %>
     <div class="col-md-10 col-md-offset-2">
       <%= render 'new_comment' %>

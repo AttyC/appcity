@@ -16,19 +16,6 @@ class PaymentsController < ApplicationController
       err = body[:error]
       flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
     end
-    
-    respond_to do |format|
-    if @payment.save
-      format.html { redirect_to @product, notice: 'Thank you for your payment. Your order will be processed.' }
-      format.js   {}
-      format.json { render json: @product, status: :created, location: @product }
-    else
-      format.html { render action: "new" }
-      format.json { render json: @product.errors, status: :unprocessable_entity }
-    end
-  end
     redirect_to product_path(product)
   end
 end
-
-
