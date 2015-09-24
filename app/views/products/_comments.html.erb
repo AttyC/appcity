@@ -1,23 +1,27 @@
-<div class="product-reviews">
-  <% @comments.each do |comment| %>
-    <div class="row">
-      <hr>
-      <ul>
-        <li><%= comment.user.first_name %></li>
-        <li><small><em>
-          <%= "#{time_ago_in_words(comment.created_at)} ago" %>"
-        </em></small>
-
-        </li>
-        <li><%= "Rating: #{comment.rating}/5" %></li>
-        <li class="rated" data-score="<%= comment.rating %>"></li>
-        <li class="pull-right"><% if signed_in? && current_user.admin? %>
-          <%= link_to ('<span class="glyphicon glyphicon-remove"</span>').html_safe, product_comment_path(@product, comment), method: :delete, data: { confirm: 'Are you quite sure?' } %>
-        <% end %></li>
-      </ul>
-      <div><%= comment.body %></div>
+<% cache(cache_key_for_comments) do %>
+  <div class="product-reviews">
+    <% @comments.each do |comment| %>
       
-    </div>
-  <% end %>
-      <%= will_paginate @comments %>
-</div>
+      <% cache(comment) do %>
+        <div class="row">
+          <hr>
+          <ul>
+            <li><%= comment.user.first_name %></li>
+            <li><small><em>
+              <%= "#{time_ago_in_words(comment.created_at)} ago" %>"
+            </em></small>
+            </li>
+            <li><%= "Rating: #{comment.rating}/5" %></li>
+            <li class="rated" data-score="<%= comment.rating %>"></li>
+            <li class="pull-right"><% if signed_in? && current_user.admin? %>
+              <%= link_to ('<span class="glyphicon glyphicon-remove"</span>').html_safe, product_comment_path(@product, comment), method: :delete, data: { confirm: 'Are you quite sure?' } %>
+              <% end %>
+            </li>
+          </ul>
+          <div><%= comment.body %></div>
+        </div>
+      <% end %> <!--end cache -->
+    <% end %>
+    <%= will_paginate @comments %>
+  </div>
+<% end %>
