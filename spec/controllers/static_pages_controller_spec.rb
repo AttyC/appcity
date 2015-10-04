@@ -1,69 +1,76 @@
 require 'rails_helper'
 
 describe StaticPagesController, :type => :controller do
-  describe "GET #index" do
+  context "GET #index" do
+    before do
+      get :index
+    end
     
     it "responds successfully with an HTTP 200 status code" do
-      get :index
       expect(response).to be_success
       expect(response).to have_http_status(200)
     end
     
     it "renders the index template" do
-      get :index
       expect(response).to render_template("index")
     end
   end
 
-  describe "GET #landing_page" do
+  context "GET #landing_page" do
+      before do
+        get :landing_page
+      end
+      
       it "responds successfully with an HTTP 200 status code" do
-      get :landing_page
       expect(response).to be_success
       expect(response).to have_http_status(200)
     end
     
     it "renders the landing_page template" do
-      get :landing_page
       expect(response).to render_template("landing_page")
     end
   end
     
 
-  describe "GET #featured_page" do
-      it "responds successfully with an HTTP 200 status code" do
+  context "GET #featured_page" do
+    before do      
       get :featured_page
+    end
+      it "responds successfully with an HTTP 200 status code" do
       expect(response).to be_success
       expect(response).to have_http_status(200)
     end
     
     it "renders the featured_page template" do
-      get :featured_page
       expect(response).to render_template("featured_page")
     end
   end
   
-  describe "GET #about" do
-      it "responds successfully with an HTTP 200 status code" do
+  context "GET #about" do
+    before do
       get :about
+    end
+    
+      it "responds successfully with an HTTP 200 status code" do
       expect(response).to be_success
       expect(response).to have_http_status(200)
     end
     
     it "renders the about template" do
-      get :about
       expect(response).to render_template("about")
     end
   end
   
-  describe "GET #contact" do
-      it "responds successfully with an HTTP 200 status code" do
+  context "GET #contact" do
+    before do
       get :contact
+    end
+      it "responds successfully with an HTTP 200 status code" do
       expect(response).to be_success
       expect(response).to have_http_status(200)
     end
     
     it "renders the contact template" do
-      get :contact
       expect(response).to render_template("contact")
     end
   end
