@@ -44,7 +44,6 @@ describe UsersController, :type => :controller do
       
       it "user1 cannot access user2 #show" do
         get :show, id: @user2.id
-        expect(assigns(:user)).to eq @user
         expect(response).to redirect_to(root_path)
       end
     
