@@ -1,0 +1,1 @@
+$redis = Redis.new(:host =>'appcity-attyc.c9.io', :port => '6379')

@@ -9,6 +9,7 @@ gem 'cancancan'
 gem 'will_paginate', '~> 3.0.5'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'dalli'
+gem 'redis-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

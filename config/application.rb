@@ -25,6 +25,7 @@ module Workspace
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.initialize_on_precompile = false
     config.filter_parameters << :password
-   # config.cache_store = :redis_store, 'redis://localhost:6379/0/cache', { expires_in: 90.minutes }
+
+    config.cache_store = :redis_store, 'redis://appcity-attyc.c9.io/:6379/0/cache'
   end
 end
