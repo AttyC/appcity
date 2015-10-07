@@ -38,13 +38,17 @@
         </div><!--end navbar collapse -->
       </div><!--end navbar container-->
     </nav>
-    
-  <h1>Tots' Music Shop</h1>
-  <h2>Buy musical instruments and props</h2>
-      <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+            <h1>Tots' Music Shop</h1>
 
-<%= yield %>
+      <div class="container">
+
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+
+        <%= yield %>
+        
+      </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

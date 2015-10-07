@@ -14,7 +14,6 @@ $padding: 0.5em;
 body {
   font: 1.2em $font-stack;
   background: $body-color;
-  width: 90%;
   margin: auto;
   
 }
@@ -24,7 +23,6 @@ h1 {
     padding: 1.7em 0 0 0;
 }
 h2 {
-  text-align: center;
   color: $dark_bg;
   font-size: 1.7em;
 }

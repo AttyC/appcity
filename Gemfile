@@ -51,6 +51,9 @@ group :development, :test do
 
   gem 'sqlite3', '~> 1.3.10'
   gem 'rspec-rails', '~> 3.0'
+  gem 'guard-rspec', require: false
+  gem 'spork-rails'
+  gem 'guard-spork'
 end
 
 group :production do
