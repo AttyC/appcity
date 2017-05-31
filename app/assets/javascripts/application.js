@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
 //= require turbolinks
 //= require jquery.lettering-0.6.1.min
 //= require_tree .
